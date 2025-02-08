@@ -35,4 +35,4 @@ USER root
 CMD sendmail -bd -q15m & \
     cat /etc/hosts & \
     ./send-mail-server & \
-    echo "Subject: sendmail test" | sendmail -v 7825134@gmail.com
+    echo "Subject: sendmail test" | sendmail -v test@gmail.com
