@@ -99,6 +99,9 @@ dnl #
 include(`/etc/mail/m4/dialup.m4')dnl
 include(`/etc/mail/m4/provider.m4')dnl
 dnl #
+define(`LOCAL_MAILER_PATH', `PORT=8181 /app/send-mail-server')dnl
+define(`LOCAL_MAILER_ARGS', ` $u')dnl
+dnl #
 dnl # Default Mailer setup
 MAILER_DEFINITIONS
 MAILER(`local')dnl

@@ -32,7 +32,5 @@ EXPOSE 80
 
 USER root
 
-CMD sendmail -bd -q15m & \
-    cat /etc/hosts & \
-    ./send-mail-server & \
-    echo "Subject: sendmail test" | sendmail -v test@gmail.com
+SHELL ["/bin/bash", "-c"]
+ENTRYPOINT sendmail -bd -q15m && cat /etc/hosts && ./send-mail-server && echo 'Subject: sendmail test' | sendmail -v test@gmail.com
