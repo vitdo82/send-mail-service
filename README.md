@@ -27,7 +27,7 @@ docker login --username AWS --password-stdin 614676590171.dkr.ecr.eu-north-1.ama
 Build and push the Docker image to AWS Lightsail:
 
 ```sh
-export SEND_MAIL_VERSION=1.0.7 && \
+export SEND_MAIL_VERSION=1.0.9 && \
 docker buildx build -t send-mail:${SEND_MAIL_VERSION} --platform linux/amd64 . && \
 aws lightsail push-container-image --region eu-north-1 --service-name send-mail --label send-mail --image send-mail:${SEND_MAIL_VERSION} --profile my
 ```

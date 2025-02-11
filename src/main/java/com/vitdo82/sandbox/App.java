@@ -13,7 +13,11 @@ import java.util.concurrent.Executors;
  * Simple http server
  */
 public class App {
-    public static void main( String[] args ) throws IOException {
+    public static void main(String[] args) throws IOException {
+        System.out.println("-------Begin-------");
+        System.out.println(String.join(", ", args));
+        System.out.println("--------End--------");
+
         int port = System.getenv("PORT") != null ? Integer.parseInt(System.getenv("PORT")) : 8080;
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         server.createContext("/health", new HealthHandler());
